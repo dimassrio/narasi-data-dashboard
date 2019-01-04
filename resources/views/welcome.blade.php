@@ -13,7 +13,7 @@
         <style>
             html, body{
 				font-size: 16px;
-				padding: 0;
+				padding: 0 10px;
 				margin: 0;
 			}
 			iframe{
