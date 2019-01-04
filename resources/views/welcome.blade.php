@@ -22,6 +22,20 @@
         </style>
     </head>
     <body>
-        <iframe height="4000" src="https://datastudio.google.com/embed/reporting/1gxRuX6KmXgnXnNVRtDJ7Q5SXYuoPzJV0/page/jwsZ" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe id="iframe" height="3830" src="https://datastudio.google.com/embed/reporting/1gxRuX6KmXgnXnNVRtDJ7Q5SXYuoPzJV0/page/jwsZ" frameborder="0" style="border:0" allowfullscreen></iframe>
     </body>
+	<script>
+		// document.querySelector("#iframe").onload = function(){
+		// 	console.log('iframe');
+		// 	console.log(document.querySelector("#iframe"));
+		// }
+		
+	// document.addEventListener("DOMContentLoaded", function(event) { 
+		//do work
+	// });
+		// $(document).ready(function(params) {
+		// 	$("#iframe").contents().find('.embedding-footer-bg').hide();
+		// 	console.log($("#iframe"));
+		// })
+	</script>
 </html>

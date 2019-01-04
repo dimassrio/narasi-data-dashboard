@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+		ElicDev\SiteProtection\SiteProtectionServiceProvider::class,
         /*
          * Application Service Providers...
          */
