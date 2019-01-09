@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+// 	dd('data');
+//     return view('welcome');
+// });
+
+Route::domain('{sub}.atnarasi.com')->group(function () {
+    Route::get('/', function ($sub) {
+        return view($sub);
+    });
 });
