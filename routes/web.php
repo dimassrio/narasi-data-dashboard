@@ -16,8 +16,8 @@
 //     return view('welcome');
 // });
 
-Route::domain('{sub}.atnarasi.com')->group(function () {
-    Route::get('/', function ($sub) {
-        return view($sub);
-    });
+Route::domain('{sub}.atnarasi.com')->group(function ($a) {
+	Route::get('/', function($sub){
+		return view($sub);
+	});
 });
