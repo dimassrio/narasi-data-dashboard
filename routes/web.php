@@ -21,3 +21,7 @@ Route::domain('{sub}.atnarasi.com')->group(function ($a) {
 		return view($sub);
 	});
 });
+
+Route::get('survey.narasi.tv', function(){
+	return view('survey');
+});
