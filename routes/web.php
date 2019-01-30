@@ -17,11 +17,11 @@
 // });
 
 Route::domain('{sub}.atnarasi.com')->group(function ($a) {
-	Route::get('/', function($sub){
-		return view($sub);
-	});
+	Route::get('/', 'DataController@getView');
 });
 
-Route::get('survey.narasi.tv', function(){
-	return view('survey');
+Route::domain('survey.narasi.tv')->group(function(){
+	Route::get('/', 'SurveyController@survey');
 });
+
+Route::get('/result', 'SurveyController@result');	

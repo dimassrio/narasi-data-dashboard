@@ -25,9 +25,9 @@ class ComposerStaticInit99e68be31407061691771fdd6de8b4db
         '1ca3bc274755662169f9629d5412a1da' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_uploaded_files.php',
         '40360c0b9b437e69bcbb7f1349ce029e' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
+        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
     );
@@ -49,6 +49,7 @@ class ComposerStaticInit99e68be31407061691771fdd6de8b4db
         array (
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
+            'WATR\\' => 5,
         ),
         'T' => 
         array (
@@ -180,6 +181,11 @@ class ComposerStaticInit99e68be31407061691771fdd6de8b4db
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'WATR\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/watr/typeform/src',
+            1 => __DIR__ . '/..' . '/watr/typeform/src',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -433,6 +439,8 @@ class ComposerStaticInit99e68be31407061691771fdd6de8b4db
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DataController' => __DIR__ . '/../..' . '/app/Http/Controllers/DataController.php',
+        'App\\Http\\Controllers\\SurveyController' => __DIR__ . '/../..' . '/app/Http/Controllers/SurveyController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -4049,6 +4057,24 @@ class ComposerStaticInit99e68be31407061691771fdd6de8b4db
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'WATR\\Models\\Answer' => __DIR__ . '/..' . '/watr/typeform/src/models/Answer.php',
+        'WATR\\Models\\Attachment' => __DIR__ . '/..' . '/watr/typeform/src/models/Attachment.php',
+        'WATR\\Models\\Choice' => __DIR__ . '/..' . '/watr/typeform/src/models/Choice.php',
+        'WATR\\Models\\Field' => __DIR__ . '/..' . '/watr/typeform/src/models/Field.php',
+        'WATR\\Models\\FieldDefinition' => __DIR__ . '/..' . '/watr/typeform/src/models/FieldDefinition.php',
+        'WATR\\Models\\FieldProperty' => __DIR__ . '/..' . '/watr/typeform/src/models/FieldProperty.php',
+        'WATR\\Models\\Form' => __DIR__ . '/..' . '/watr/typeform/src/models/Form.php',
+        'WATR\\Models\\FormDefinition' => __DIR__ . '/..' . '/watr/typeform/src/models/FormDefinition.php',
+        'WATR\\Models\\FormResponse' => __DIR__ . '/..' . '/watr/typeform/src/models/FormResponse.php',
+        'WATR\\Models\\Link' => __DIR__ . '/..' . '/watr/typeform/src/models/Link.php',
+        'WATR\\Models\\Meta' => __DIR__ . '/..' . '/watr/typeform/src/models/Meta.php',
+        'WATR\\Models\\Property' => __DIR__ . '/..' . '/watr/typeform/src/models/Property.php',
+        'WATR\\Models\\Reference' => __DIR__ . '/..' . '/watr/typeform/src/models/Reference.php',
+        'WATR\\Models\\Screen' => __DIR__ . '/..' . '/watr/typeform/src/models/Screen.php',
+        'WATR\\Models\\Setting' => __DIR__ . '/..' . '/watr/typeform/src/models/Setting.php',
+        'WATR\\Models\\Validation' => __DIR__ . '/..' . '/watr/typeform/src/models/Validation.php',
+        'WATR\\Models\\WebhookResponse' => __DIR__ . '/..' . '/watr/typeform/src/models/WebhookResponse.php',
+        'WATR\\Typeform' => __DIR__ . '/..' . '/watr/typeform/src/Typeform.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',

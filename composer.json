@@ -12,7 +12,8 @@
         "elic-dev/laravel-site-protection": "^1.0",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "watr/typeform": "^1.5"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -34,7 +35,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+			"WATR\\": "vendor/watr/typeform/src/"
         },
         "classmap": [
             "database/seeds",
