@@ -8,12 +8,12 @@
 	<title>Hasil Survey</title>
 	<link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
-<body>
+<body class="result--body">
 	<div class="container">
 		<div class="global--wrapper">
 			<div class="row">
 			<div class="col-sm-12">
-				<h1 class="text-center">Pemenang Survey Narasi </h1>
+				<h1 class="text-center">Pemenang Survey Narasi Roadshow</h1>
 			</div>
 		</div>
 		<div class="row">

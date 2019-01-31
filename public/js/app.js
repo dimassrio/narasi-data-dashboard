@@ -1826,18 +1826,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      items: []
+      data: [],
+      items: [],
+      key: []
     };
   },
   mounted: function mounted() {
-    for (var index = 0; index < 10; index++) {
-      this.items.push({
-        id: index,
-        account: '@instagram_name_' + index
-      });
+    var that = this;
+
+    function reqListener() {
+      that.data = JSON.parse(this.responseText).data;
+    }
+
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", reqListener);
+    oReq.open("GET", "/api/result");
+    oReq.send();
+  },
+  watch: {
+    data: function data() {
+      for (var index = 0; index < 10; index++) {
+        var rand = this.getRandomInt(0, this.data.length);
+        this.key.push(rand);
+        this.items.push(this.data[rand]);
+      }
     }
   },
   methods: {
@@ -1846,6 +1869,30 @@ __webpack_require__.r(__webpack_exports__);
     },
     flipClose: function flipClose(val) {
       val.target.parentNode.classList.remove('active');
+
+      if (Number.isInteger(parseInt(val.target.id))) {
+        var rand = 0;
+        var flag = true;
+
+        while (flag) {
+          rand = this.getRandomInt(0, this.items.length);
+
+          if (this.key.indexOf(rand) == -1) {
+            flag = false;
+          }
+        }
+
+        var that = this;
+        setTimeout(function (e) {
+          that.items.splice(val.target.id, 1, that.data[rand]);
+          that.key.splice(val.target.id, 1, rand);
+        }, 200);
+      }
+    },
+    getRandomInt: function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
     }
   }
 });
@@ -6118,12 +6165,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__(/*! ../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.col-sm-12-5{\n\t\twidth: 20%;\n\t\tpadding: 0 10px;\n}\n.result-content--wrapper{\n\t\tmargin: 40px 0;\n}\n.result-content--card{\n\t\tmargin: 20px 0;\n\t\ttransition: 0.6s;\n    \t-webkit-transform-style: preserve-3d;\n    \t        transform-style: preserve-3d;\n    \tposition: relative;\n\t\twidth: 100%;\n\t\theight: 30vh;\n}\n.result-content--card.active{\n\t\t-webkit-transform: rotateY(180deg);\n\t\t        transform: rotateY(180deg);\n}\n.result-content--back, .result-content--front{\n\t\twidth: 100%;\n\t\theight: 30vh;\n\t\t\n\t\tfont-weight: 700;\n\t\tcolor: white;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\tbackface-visibility: hidden;\n\t\t-webkit-backface-visibility: hidden;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n}\n.result-content--back{\n\t\tbackground: red;\n\t\t-webkit-transform: rotateY(180deg);\n\t\t        transform: rotateY(180deg);\n}\n.result-content--front{\n\t\tbackground: blue;\n\t\tz-index: 2;\n    \t-webkit-transform: rotateY(0deg);\n    \t        transform: rotateY(0deg);\n}\n", ""]);
+exports.push([module.i, "\n.col-sm-12-5 {\n    width: 20%;\n    padding: 0 10px;\n}\n.result-content--wrapper {\n    margin: 40px 0;\n}\n.result-content--card {\n    margin: 20px 0;\n    transition: 0.6s;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n    position: relative;\n    width: 100%;\n    height: 30vh;\n}\n.result-content--card.active {\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n}\n.result-content--back,\n.result-content--front {\n    width: 100%;\n    height: 30vh;\n\n    font-weight: 700;\n    color: white;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    backface-visibility: hidden;\n    -webkit-backface-visibility: hidden;\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.result-content--back {\n    background: #EC2329;\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n}\n.result-content--front {\n    background-color: white;\n    background-image: url(" + escape(__webpack_require__(/*! ../../../public/card-front.png */ "./public/card-front.png")) + ");\n    background-size: cover;\n    z-index: 2;\n    -webkit-transform: rotateY(0deg);\n            transform: rotateY(0deg);\n}\n", ""]);
 
 // exports
 
@@ -6212,6 +6260,33 @@ function toComment(sourceMap) {
 	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
 
 	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/url/escape.js":
+/*!***************************************************!*\
+  !*** ./node_modules/css-loader/lib/url/escape.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function escape(url) {
+    if (typeof url !== 'string') {
+        return url
+    }
+    // If url is already wrapped in quotes, remove them
+    if (/^['"].*['"]$/.test(url)) {
+        url = url.slice(1, -1);
+    }
+    // Should url be wrapped?
+    // See https://drafts.csswg.org/css-values-3/#urls
+    if (/["'() \t\n]/.test(url)) {
+        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+    }
+
+    return url
 }
 
 
@@ -37369,9 +37444,10 @@ var render = function() {
               "div",
               {
                 staticClass: "result-content--back",
+                attrs: { id: index },
                 on: { click: _vm.flipClose }
               },
-              [_c("h5", [_vm._v(_vm._s(item.account))])]
+              [_c("h5", [_vm._v("@" + _vm._s(item.instagram))])]
             )
           ])
         ])
@@ -48639,6 +48715,17 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+
+/***/ "./public/card-front.png":
+/*!*******************************!*\
+  !*** ./public/card-front.png ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/card-front.png?642201d56f655c48b468cb6e1bae4788";
 
 /***/ }),
 

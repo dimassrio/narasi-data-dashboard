@@ -12,6 +12,7 @@ class RamenTypeform extends WATR\Typeform{
         	$response = $this->http->get("/forms/" . $formId . "/responses");
 		}
         $body = json_decode($response->getBody());
+		
         $responses = [];
         if (isset($body->items)) {
             foreach ($body->items as $item) {
@@ -22,6 +23,11 @@ class RamenTypeform extends WATR\Typeform{
 				}
             }
         }
+		$result = new \StdClass;
+		$result->data = $responses;
+		$result->meta = new \StdClass;
+		$result->meta->total_items = $body->total_items;
+		$result->meta->total_pages = $body->page_count;
         return $responses;
     }
 }

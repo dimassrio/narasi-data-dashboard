@@ -13,46 +13,46 @@ class SurveyController extends Controller
 			"accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
 		]);
 		$typeform = new RamenTypeform('BFMeTmCXWVLW7XwWR2QDhY7X83qN6hA1YJyMSTF61NdV');
-		$data = $typeform->getResponses('of5Vu9');
-		$result = [];
-		try{
-			$response = $client->get("https://www.instagram.com/aihijau/?__a=1");
-		}catch(\Exception $e){
-			dd($e);
-		}
+		$response = null;
+		// \Cache::delete('survey');
+		if(is_null(\Cache::get('survey'))){
+			$data = $typeform->getResponses('of5Vu9','?page_size=1000');
+			$result = [];
+			// try{
+			// 	$response = $client->get("https://www.instagram.com/aihijau/?__a=1");
+			// }catch(\Exception $e){
+			// 	dd($e);
+			// }
 
-		foreach ($data as $key => $value) {
-			$temp = new \StdClass;
-			$temp->name = array_first(array_where($value->answers, function($value, $key){
-				return $value->field_identifier =='ZvNGvCJeVVaO';
-			}))->answer;
-			
-			$temp->email = array_first(array_where($value->answers, function($value, $key){
-				return $value->field_identifier =='z5dtzSBwL0v5';
-			}))->answer;
-			$temp->instagram = array_first(array_where($value->answers, function($value, $key){
-				return $value->field_identifier =='CwbdSEq6aUpW';
-			}))->answer;
-			
-			$inst = (substr($temp->instagram, 0, 1) == '@') ? substr($temp->instagram, 1) : substr($temp->instagram, 0);
-			$response = null;
-			try{
-				$response = $client->get("https://www.instagram.com/".$inst."/?__a=1");
-			}catch(\Exception $e){
-				dd($e);
-				$response = null;
+			foreach ($data as $key => $value) {
+				$temp = new \StdClass;
+				$temp->name = array_first(array_where($value->answers, function($value, $key){
+					return $value->field_identifier =='ZvNGvCJeVVaO';
+				}))->answer;
+				
+				$temp->email = array_first(array_where($value->answers, function($value, $key){
+					return $value->field_identifier =='z5dtzSBwL0v5';
+				}))->answer;
+				$temp->instagram = array_first(array_where($value->answers, function($value, $key){
+					return $value->field_identifier =='CwbdSEq6aUpW';
+				}))->answer;
+				
+				$temp->instagram = (substr($temp->instagram, 0, 1) == '@') ? substr($temp->instagram, 1) : substr($temp->instagram, 0);
+				$result[] = $temp;
 			}
-			if(!is_null($response)){
-				$body = json_decode($response->getBody());
-				$temp->instagram_name = $body->graphql->user->full_name;
-				$temp->instagram_biography = $body->graphql->user->biography;
-				$temp->instagram_picture = $body->graphql->user->profile_pic_url_hd;
-			
-			}
-			
-			$result[] = $temp;
-		}
-		return response()->json($result);
+			$response = new \StdClass;
+			$response->data = $result;
+			$response->meta = new \StdClass;
+			$response->meta->total_items = count($data);
+			\Cache::set('survey', json_encode($response), 60);
+		};
+		$response = json_decode(\Cache::get('survey'));
+	
+		return $response;
+	}
+
+	public function apiResult(Request $request){
+		return response()->json($this->result($request));
 	}
 
 	public function survey(Request $request){
@@ -60,6 +60,7 @@ class SurveyController extends Controller
 	}
 
 	public function hasil(Request $request){
+		// $data = $this->result($request);
 		return view('hasil');
 	}
 }
