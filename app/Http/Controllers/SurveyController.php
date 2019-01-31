@@ -58,4 +58,8 @@ class SurveyController extends Controller
 	public function survey(Request $request){
 		return view('survey');
 	}
+
+	public function hasil(Request $request){
+		return view('hasil');
+	}
 }
