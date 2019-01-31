@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a21b8160dead386269714ac66b5811d",
+    "content-hash": "038ac5202baee97254f9da479590e4c3",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3145,6 +3145,50 @@
                 "environment"
             ],
             "time": "2018-10-30T17:29:25+00:00"
+        },
+        {
+            "name": "watr/typeform",
+            "version": "1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wearetherobots/typeform.git",
+                "reference": "b93c9c767c2b15d79af332dad94e54d67e0616d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wearetherobots/typeform/zipball/b93c9c767c2b15d79af332dad94e54d67e0616d7",
+                "reference": "b93c9c767c2b15d79af332dad94e54d67e0616d7",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0"
+            },
+            "require-dev": {
+                "php-vcr/php-vcr": "^1.4",
+                "phpunit/phpunit": "~7",
+                "psy/psysh": "@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ],
+                "psr-4": {
+                    "WATR\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ricardo Tapia",
+                    "email": "rtapia92@gmail.com"
+                }
+            ],
+            "description": "A simple wrapper for Typeform API calls",
+            "time": "2018-08-23T22:00:30+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
