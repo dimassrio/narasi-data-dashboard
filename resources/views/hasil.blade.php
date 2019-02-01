@@ -7,6 +7,7 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<title>Hasil Survey</title>
 	<link rel="stylesheet" href="{{asset('css/app.css')}}">
+	<link rel="stylesheet" href="https://use.typekit.net/mya0shg.css">
 </head>
 <body class="result--body">
 	<div class="container">

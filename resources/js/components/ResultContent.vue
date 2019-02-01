@@ -7,7 +7,7 @@
                     <!-- <img src="../../../public/card-front.svg" alt=""> -->
                 </div>
                 <div class="result-content--back" @click="flipClose" :id="index">
-                    <h5>@{{item.instagram}}</h5>
+                    <h4>@{{item.instagram}}</h4>
                 </div>
             </div>
         </div>
@@ -58,6 +58,16 @@
 .result-content--back {
     background: #EC2329;
     transform: rotateY(180deg);
+}
+
+.result-content--back h4{
+	overflow-wrap: break-word;
+	word-wrap:break-word;
+	word-break: break-all;
+	text-align: center;
+	font-family: 'proxima-nova', 'Arial', sans-serif;
+	font-weight: 700;
+	font-size: 2em;
 }
 
 .result-content--front {

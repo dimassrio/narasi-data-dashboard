@@ -1834,6 +1834,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6171,7 +6181,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.col-sm-12-5 {\n    width: 20%;\n    padding: 0 10px;\n}\n.result-content--wrapper {\n    margin: 40px 0;\n}\n.result-content--card {\n    margin: 20px 0;\n    transition: 0.6s;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n    position: relative;\n    width: 100%;\n    height: 30vh;\n}\n.result-content--card.active {\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n}\n.result-content--back,\n.result-content--front {\n    width: 100%;\n    height: 30vh;\n\n    font-weight: 700;\n    color: white;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    backface-visibility: hidden;\n    -webkit-backface-visibility: hidden;\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.result-content--back {\n    background: #EC2329;\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n}\n.result-content--front {\n    background-color: white;\n    background-image: url(" + escape(__webpack_require__(/*! ../../../public/card-front.png */ "./public/card-front.png")) + ");\n    background-size: cover;\n    z-index: 2;\n    -webkit-transform: rotateY(0deg);\n            transform: rotateY(0deg);\n}\n", ""]);
+exports.push([module.i, "\n.col-sm-12-5 {\n    width: 20%;\n    padding: 0 10px;\n}\n.result-content--wrapper {\n    margin: 40px 0;\n}\n.result-content--card {\n    margin: 20px 0;\n    transition: 0.6s;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n    position: relative;\n    width: 100%;\n    height: 30vh;\n}\n.result-content--card.active {\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n}\n.result-content--back,\n.result-content--front {\n    width: 100%;\n    height: 30vh;\n\n    font-weight: 700;\n    color: white;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    backface-visibility: hidden;\n    -webkit-backface-visibility: hidden;\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.result-content--back {\n    background: #EC2329;\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n}\n.result-content--back h4{\n\toverflow-wrap: break-word;\n\tword-wrap:break-word;\n\tword-break: break-all;\n\ttext-align: center;\n\tfont-family: 'proxima-nova', 'Arial', sans-serif;\n\tfont-weight: 700;\n\tfont-size: 2em;\n}\n.result-content--front {\n    background-color: white;\n    background-image: url(" + escape(__webpack_require__(/*! ../../../public/card-front.png */ "./public/card-front.png")) + ");\n    background-size: cover;\n    z-index: 2;\n    -webkit-transform: rotateY(0deg);\n            transform: rotateY(0deg);\n}\n", ""]);
 
 // exports
 
@@ -37447,7 +37457,7 @@ var render = function() {
                 attrs: { id: index },
                 on: { click: _vm.flipClose }
               },
-              [_c("h5", [_vm._v("@" + _vm._s(item.instagram))])]
+              [_c("h4", [_vm._v("@" + _vm._s(item.instagram))])]
             )
           ])
         ])
