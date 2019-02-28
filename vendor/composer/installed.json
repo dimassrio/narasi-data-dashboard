@@ -176,6 +176,51 @@
         ]
     },
     {
+        "name": "elic-dev/laravel-site-protection",
+        "version": "1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/elic-dev/laravel-site-protection.git",
+            "reference": "885a64f1f42dfa41d523f6c261844fa373cf6ad2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/elic-dev/laravel-site-protection/zipball/885a64f1f42dfa41d523f6c261844fa373cf6ad2",
+            "reference": "885a64f1f42dfa41d523f6c261844fa373cf6ad2",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.4"
+        },
+        "time": "2018-06-02T09:54:48+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "ElicDev\\SiteProtection\\SiteProtectionServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "ElicDev\\SiteProtection\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Matthias Lill",
+                "email": "m.lill@gmx.de"
+            }
+        ],
+        "description": "Protect your site with a simple password form"
+    },
+    {
         "name": "erusev/parsedown",
         "version": "1.7.1",
         "version_normalized": "1.7.1.0",
@@ -3267,6 +3312,103 @@
         ]
     },
     {
+        "name": "spatie/laravel-sluggable",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/spatie/laravel-sluggable.git",
+            "reference": "77b67b701ec0cbf9d5ec7f91da25f69db119b2a5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/77b67b701ec0cbf9d5ec7f91da25f69db119b2a5",
+            "reference": "77b67b701ec0cbf9d5ec7f91da25f69db119b2a5",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/database": "~5.5.0|~5.6.0|~5.7.0",
+            "illuminate/support": "~5.5.0|~5.6.0|~5.7.0",
+            "php": ">=7.0.0"
+        },
+        "require-dev": {
+            "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0",
+            "phpunit/phpunit": "^6.3|^7.0"
+        },
+        "time": "2019-01-10T08:17:22+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Spatie\\Sluggable\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Freek Van der Herten",
+                "email": "freek@spatie.be",
+                "homepage": "https://spatie.be",
+                "role": "Developer"
+            }
+        ],
+        "description": "Generate slugs when saving Eloquent models",
+        "homepage": "https://github.com/spatie/laravel-sluggable",
+        "keywords": [
+            "laravel-sluggable",
+            "spatie"
+        ]
+    },
+    {
+        "name": "watr/typeform",
+        "version": "1.5.1",
+        "version_normalized": "1.5.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/wearetherobots/typeform.git",
+            "reference": "b93c9c767c2b15d79af332dad94e54d67e0616d7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/wearetherobots/typeform/zipball/b93c9c767c2b15d79af332dad94e54d67e0616d7",
+            "reference": "b93c9c767c2b15d79af332dad94e54d67e0616d7",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/guzzle": "~6.0"
+        },
+        "require-dev": {
+            "php-vcr/php-vcr": "^1.4",
+            "phpunit/phpunit": "~7",
+            "psy/psysh": "@stable"
+        },
+        "time": "2018-08-23T22:00:30+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ],
+            "psr-4": {
+                "WATR\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ricardo Tapia",
+                "email": "rtapia92@gmail.com"
+            }
+        ],
+        "description": "A simple wrapper for Typeform API calls"
+    },
+    {
         "name": "beyondcode/laravel-dump-server",
         "version": "1.2.2",
         "version_normalized": "1.2.2.0",
@@ -5088,148 +5230,6 @@
             "phpunit",
             "testing",
             "xunit"
-        ]
-    },
-    {
-        "name": "elic-dev/laravel-site-protection",
-        "version": "1.0.4",
-        "version_normalized": "1.0.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/elic-dev/laravel-site-protection.git",
-            "reference": "885a64f1f42dfa41d523f6c261844fa373cf6ad2"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/elic-dev/laravel-site-protection/zipball/885a64f1f42dfa41d523f6c261844fa373cf6ad2",
-            "reference": "885a64f1f42dfa41d523f6c261844fa373cf6ad2",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.6.4"
-        },
-        "time": "2018-06-02T09:54:48+00:00",
-        "type": "library",
-        "extra": {
-            "laravel": {
-                "providers": [
-                    "ElicDev\\SiteProtection\\SiteProtectionServiceProvider"
-                ]
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "ElicDev\\SiteProtection\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Matthias Lill",
-                "email": "m.lill@gmx.de"
-            }
-        ],
-        "description": "Protect your site with a simple password form"
-    },
-    {
-        "name": "watr/typeform",
-        "version": "1.5.1",
-        "version_normalized": "1.5.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/wearetherobots/typeform.git",
-            "reference": "b93c9c767c2b15d79af332dad94e54d67e0616d7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/wearetherobots/typeform/zipball/b93c9c767c2b15d79af332dad94e54d67e0616d7",
-            "reference": "b93c9c767c2b15d79af332dad94e54d67e0616d7",
-            "shasum": ""
-        },
-        "require": {
-            "guzzlehttp/guzzle": "~6.0"
-        },
-        "require-dev": {
-            "php-vcr/php-vcr": "^1.4",
-            "phpunit/phpunit": "~7",
-            "psy/psysh": "@stable"
-        },
-        "time": "2018-08-23T22:00:30+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/"
-            ],
-            "psr-4": {
-                "WATR\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Ricardo Tapia",
-                "email": "rtapia92@gmail.com"
-            }
-        ],
-        "description": "A simple wrapper for Typeform API calls"
-    },
-    {
-        "name": "spatie/laravel-sluggable",
-        "version": "2.1.5",
-        "version_normalized": "2.1.5.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/spatie/laravel-sluggable.git",
-            "reference": "77b67b701ec0cbf9d5ec7f91da25f69db119b2a5"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/77b67b701ec0cbf9d5ec7f91da25f69db119b2a5",
-            "reference": "77b67b701ec0cbf9d5ec7f91da25f69db119b2a5",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/database": "~5.5.0|~5.6.0|~5.7.0",
-            "illuminate/support": "~5.5.0|~5.6.0|~5.7.0",
-            "php": ">=7.0.0"
-        },
-        "require-dev": {
-            "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0",
-            "phpunit/phpunit": "^6.3|^7.0"
-        },
-        "time": "2019-01-10T08:17:22+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Spatie\\Sluggable\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Freek Van der Herten",
-                "email": "freek@spatie.be",
-                "homepage": "https://spatie.be",
-                "role": "Developer"
-            }
-        ],
-        "description": "Generate slugs when saving Eloquent models",
-        "homepage": "https://github.com/spatie/laravel-sluggable",
-        "keywords": [
-            "laravel-sluggable",
-            "spatie"
         ]
     }
 ]

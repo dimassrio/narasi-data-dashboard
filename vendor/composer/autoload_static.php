@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit99e68be31407061691771fdd6de8b4db
+class ComposerStaticInit3be968a5c5ba510edfb70f2f55073311
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -519,7 +519,6 @@ class ComposerStaticInit99e68be31407061691771fdd6de8b4db
         'Dotenv\\Exception\\InvalidPathException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/InvalidPathException.php',
         'Dotenv\\Exception\\ValidationException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/ValidationException.php',
         'Dotenv\\Loader' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Loader.php',
-        'Dotenv\\Parser' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Parser.php',
         'Dotenv\\Validator' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Validator.php',
         'Egulias\\EmailValidator\\EmailLexer' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/EmailLexer.php',
         'Egulias\\EmailValidator\\EmailParser' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/EmailParser.php',
@@ -1436,7 +1435,6 @@ class ComposerStaticInit99e68be31407061691771fdd6de8b4db
         'Illuminate\\Database\\Eloquent\\Concerns\\QueriesRelationships' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php',
         'Illuminate\\Database\\Eloquent\\Factory' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Factory.php',
         'Illuminate\\Database\\Eloquent\\FactoryBuilder' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/FactoryBuilder.php',
-        'Illuminate\\Database\\Eloquent\\HigherOrderBuilderProxy' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/HigherOrderBuilderProxy.php',
         'Illuminate\\Database\\Eloquent\\JsonEncodingException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/JsonEncodingException.php',
         'Illuminate\\Database\\Eloquent\\MassAssignmentException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/MassAssignmentException.php',
         'Illuminate\\Database\\Eloquent\\Model' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Model.php',
@@ -4213,11 +4211,11 @@ class ComposerStaticInit99e68be31407061691771fdd6de8b4db
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit99e68be31407061691771fdd6de8b4db::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit99e68be31407061691771fdd6de8b4db::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit99e68be31407061691771fdd6de8b4db::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit99e68be31407061691771fdd6de8b4db::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit99e68be31407061691771fdd6de8b4db::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3be968a5c5ba510edfb70f2f55073311::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3be968a5c5ba510edfb70f2f55073311::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit3be968a5c5ba510edfb70f2f55073311::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3be968a5c5ba510edfb70f2f55073311::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit3be968a5c5ba510edfb70f2f55073311::$classMap;
 
         }, null, ClassLoader::class);
     }

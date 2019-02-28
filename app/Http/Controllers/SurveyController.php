@@ -12,18 +12,13 @@ class SurveyController extends Controller
 			"headers" => ["User-Agent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"],
 			"accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
 		]);
-		$typeform = new RamenTypeform('BFMeTmCXWVLW7XwWR2QDhY7X83qN6hA1YJyMSTF61NdV');
+		$typeform = new RamenTypeform('9nhJymUqoK4z8DZPkyFVJDG9ZgdQWVXhsN968W3rQvzs');
 		$response = null;
-		// \Cache::delete('survey');
+		\Cache::delete('survey');
 		if(is_null(\Cache::get('survey'))){
-			$data = $typeform->getResponses('of5Vu9','?page_size=1000');
+			$data = $typeform->getResponses('oF5Vu9','?page_size=1000');
 			$result = [];
-			// try{
-			// 	$response = $client->get("https://www.instagram.com/aihijau/?__a=1");
-			// }catch(\Exception $e){
-			// 	dd($e);
-			// }
-
+			// dd($data);
 			foreach ($data as $key => $value) {
 				$temp = new \StdClass;
 				$temp->name = array_first(array_where($value->answers, function($value, $key){
@@ -56,6 +51,7 @@ class SurveyController extends Controller
 	}
 
 	public function survey(Request $request){
+
 		return view('survey');
 	}
 

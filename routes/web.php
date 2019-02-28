@@ -29,6 +29,7 @@ Route::domain('hasilsurvey.narasi.tv')->group(function(){
 });
 
 Route::get('/result', 'SurveyController@result');
+Route::get('/survey', 'SurveyController@survey');
 Route::get('/hasil', 'SurveyController@hasil');
 Route::domain('hasil.data.test')->group(function(){
 	Route::get('/', 'SurveyController@hasil');
