@@ -14,23 +14,30 @@ class SurveyController extends Controller
 		]);
 		$typeform = new RamenTypeform('9nhJymUqoK4z8DZPkyFVJDG9ZgdQWVXhsN968W3rQvzs');
 		$response = null;
-		\Cache::delete('survey');
+		// \Cache::delete('survey');
 		if(is_null(\Cache::get('survey'))){
-			$data = $typeform->getResponses('oF5Vu9','?page_size=1000');
+			$data = $typeform->getResponses('F4nXec','?page_size=500');
 			$result = [];
-			// dd($data);
 			foreach ($data as $key => $value) {
 				$temp = new \StdClass;
-				$temp->name = array_first(array_where($value->answers, function($value, $key){
-					return $value->field_identifier =='ZvNGvCJeVVaO';
-				}))->answer;
-				
-				$temp->email = array_first(array_where($value->answers, function($value, $key){
-					return $value->field_identifier =='z5dtzSBwL0v5';
-				}))->answer;
-				$temp->instagram = array_first(array_where($value->answers, function($value, $key){
-					return $value->field_identifier =='CwbdSEq6aUpW';
-				}))->answer;
+				$test = array_where($value->answers, function($value, $key){
+					return $value->field_identifier =='QGg6BMWA8p8H';
+				});
+				if(count($test) > 0){
+					$temp->name = array_first($test)->answer;
+				}
+				$test = array_where($value->answers, function($value, $key){
+					return $value->field_identifier =='nxHoOVKEkLew';
+				});
+				if(count($test) > 0){
+					$temp->email = array_first($test)->answer;
+				}
+				$test = array_where($value->answers, function($value, $key){
+					return $value->field_identifier =='ypOQHmHbeKxQ';
+				});
+				if(count($test) > 0){
+					$temp->instagram = array_first($test)->answer;
+				}
 				
 				$temp->instagram = (substr($temp->instagram, 0, 1) == '@') ? substr($temp->instagram, 1) : substr($temp->instagram, 0);
 				$result[] = $temp;

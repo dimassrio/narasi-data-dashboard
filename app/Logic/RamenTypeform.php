@@ -12,7 +12,7 @@ class RamenTypeform extends WATR\Typeform{
         	$response = $this->http->get("/forms/" . $formId . "/responses");
 		}
         $body = json_decode($response->getBody());
-		dd($body);
+
         $responses = [];
         if (isset($body->items)) {
             foreach ($body->items as $item) {
