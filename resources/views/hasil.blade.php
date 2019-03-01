@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://use.typekit.net/mya0shg.css">
 </head>
 <body class="result--body">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="global--wrapper">
 			<div class="row">
 			<div class="col-sm-12">
